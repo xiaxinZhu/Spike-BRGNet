@@ -1,5 +1,7 @@
 # Spike-BRGNet: Efficient and Accurate Event-based Semantic Segmentation with Boundary Region-Guided Spiking Neural Networks
 
+This is the source code of our **IEEE TCSVT** paper, titled "[Spike-BRGNet: Efficient and Accurate Event-based Semantic Segmentation with Boundary Region-Guided Spiking Neural Networks](https://ieeexplore.ieee.org/document/10750266)".
+
 This is the official repository for our recent work: Spike-BRGNet ([PDF](https://ieeexplore.ieee.org/document/10750266)）
 
 
@@ -8,7 +10,7 @@ This is the official repository for our recent work: Spike-BRGNet ([PDF](https:/
 * **More Accurate and Less Energy Cost**: Spike-BRGNet outperforms SOTA methods by at least 1.57% and 1.91% mIoU on DDD17 and DSEC-Semantic datasets with less computation cost, respectively.
 
 ## Updates
-   - This paper was accepted by TCSVT 2024, new version and associated materials will be available soon! (Nov/8/2024)
+   - This paper was accepted by TCSVT 2024, a new version and associated materials will be available soon! (Nov/8/2024)
    - Our paper was submitted to IEEE Explore for public access. (Nov/11/2024)
    - The training and testing codes and trained models for Spike-BRGNet are available here. (Dec/09/2024)
 
@@ -17,16 +19,16 @@ This is the official repository for our recent work: Spike-BRGNet ([PDF](https:/
 ## Models
 The finetuned models on DDD17 and DSEC-Semantic are available for direct application in road scene parsing.
 
-| Model (DDD17) | Val (% mIOU) | Energy_Cost (mJ) | Params (M) |
-|:-:|:-:|:-:|:-:|
-| Spike-BRGNet | [54.72](https://drive.google.com/file/d/1hMSVBppTo4vqCbvjY03n8xAQMsbCfQGo/view?usp=drive_link) | 7.77 | 7.68 | 
+| Model |Dataset| Val (% mIOU) | Energy_Cost (mJ) | Params (M) |
+|:-:|:-:|:-:|:-:|:-:|
+| Spike-BRGNet |DDD17| [54.72](https://drive.google.com/file/d/1hMSVBppTo4vqCbvjY03n8xAQMsbCfQGo/view?usp=drive_link) | 7.77 | 7.68 | 
 
-| Model (DSEC-Semantic) | Val (% mIOU) | Energy_Cost (mJ) | Params (M) |
-|:-:|:-:|:-:|:-:|
-| Spike-BRGNet | [54.95](https://drive.google.com/file/d/1PoWq3rxwNXsKK3f888KWSr9wzgk6ouea/view?usp=drive_link) | 30.18 | 7.68 |
+| Model|Dataset | Val (% mIOU) | Energy_Cost (mJ) | Params (M) |
+|:-:|:-:|:-:|:-:|:-:|
+| Spike-BRGNet |DSEC-Semantic| [54.95](https://drive.google.com/file/d/1PoWq3rxwNXsKK3f888KWSr9wzgk6ouea/view?usp=drive_link) | 30.18 | 7.68 |
 
 ## Prerequisites
-The inference speed is tested on single RTX 3090 using the method introduced by [SwiftNet](https://arxiv.org/pdf/1903.08469.pdf). No third-party acceleration lib is used, so you can try [TensorRT](https://github.com/NVIDIA/TensorRT) or other approaches for faster speed.
+The inference speed is tested on a single RTX 3090 using the method introduced by [SwiftNet](https://arxiv.org/pdf/1903.08469.pdf). No third-party acceleration lib is used, so you can try [TensorRT](https://github.com/NVIDIA/TensorRT) or other approaches for faster speed.
 
 ## Usage
 
@@ -61,7 +63,7 @@ The DSEC-Semantic dataset can be downloaded here[https://dsec.ifi.uzh.ch/dsec-se
 │       │   └── ...  
 │       └── ... 
 
-* Remenber to replace the dataset path in the yaml with your ture dataset path
+* Remember to replace the dataset path in the YAML with your true dataset path
 
 
 ### 1. Training
@@ -82,7 +84,7 @@ python tools/train.py --cfg configs/DSEC/SpikeBRGNet_DSEC.yaml
 ````bash
 python tools/eval.py --cfg configs/DDD17/SpikeBRGNet_DDD17.yaml TEST.MODEL_FILE pretrained_models/DDD17/SpikeBRGNet_DDD17_Test.pt
 ````
-* Or, evalute the SpikeBRGNet on DSEC-Semantic val set:
+* Or, evaluate the SpikeBRGNet on DSEC-Semantic val set:
 ````bash
 python tools/eval.py --cfg configs/DSEC/SpikeBRGNet_DSEC.yaml TEST.MODEL_FILE pretrained_models/DSEC/SpikeBRGNet_DSEC_Test.pt
 ````
