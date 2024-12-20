@@ -19,7 +19,7 @@ The finetuned models on DDD17 and DSEC-Semantic are available for direct applica
 
 | Model (DDD17) | Val (% mIOU) | Energy_Cost (mJ) | Params (M) |
 |:-:|:-:|:-:|:-:|
-| Spike-BRGNet | [54.72](https://drive.google.com/file/d/1diolNfZhsiC6SwZTvTEC_8mPKaiGUOvg/view?usp=drive_link) | 7.77 | 7.68 | 
+| Spike-BRGNet | [54.72](https://drive.google.com/file/d/1hMSVBppTo4vqCbvjY03n8xAQMsbCfQGo/view?usp=drive_link) | 7.77 | 7.68 | 
 
 | Model (DSEC-Semantic) | Val (% mIOU) | Energy_Cost (mJ) | Params (M) |
 |:-:|:-:|:-:|:-:|
